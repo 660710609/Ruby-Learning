@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :person
+      namespace :user do
+        post "sign_in", to: "sessions#sign_in"
+        post "sign_out", to: "sessions#sign_out"
+        get "me", to: "sessions#me"
+      end
     end
   end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
