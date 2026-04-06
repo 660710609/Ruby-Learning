@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #1A1A1A;
+}
+
+.bt1{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bt1 button{
+    background-color: aliceblue;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+.bt1 button:hover{
+    transition: 0.1s;
+    background-color: blue;
+    color: white
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  flex-direction: column;
+}
+
+.photo {
+  width: 100px;          
+  height: 100px;       
+  background-color: #fff; 
+  border-radius: 50%;   
+  border: 2px solid #ddd; 
+  display: inline-block;
+  overflow: hidden;     
+}

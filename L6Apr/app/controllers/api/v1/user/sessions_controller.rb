@@ -5,7 +5,7 @@ class Api::V1::User::SessionsController < Api::V1::User::AppController
   def sign_in
     # params {email , password}
     raise LgError.new("Invalid Email") rescue nil
-    if @user.valid_password?(params[:user][:password])
+    if !@user.nil? && @user.valid_password?(params[:user][:password])
       render json: { success: true, user: @user.as_json_with_jwt }
     else
       raise LgAuthenticationError.new("Invalid Email or Password")
