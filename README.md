@@ -26,6 +26,6 @@ payload = {data: 'test'}
 
 token = JWT.encode(payload , secret , 'HS256')
 
-decode_token = JWT.decode(token , nil , false)
+decode_token = JWT.decode(token , secret , true , {algorithm: 'HS256'})
 
 ```
