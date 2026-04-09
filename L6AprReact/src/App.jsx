@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Signin from './components/Signin'
 import Register from './components/Register'
+import Navbar, { disconnectCable } from './components/Navbar'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -55,6 +56,8 @@ function App() {
           })
 
         if (res.data.success) {
+          localStorage.removeItem('token')
+          disconnectCable();
           setUserData({})
           setUser()
           navigate('/Signin')
@@ -67,6 +70,7 @@ function App() {
 
   return (
     <div className='App'>
+      <Navbar user={user}/>
       <nav className="bt1">
         <Link to="/"><button>Home</button></Link>
         {!user && <Link to="/Signin"><button>Sign In</button></Link>}

@@ -38,6 +38,11 @@ class User < ApplicationRecord
     self.auth_token = SecureRandom.uuid
   end
 
+  def renew_auth_token
+    generate_auth_token
+    save!
+  end
+
   def jwt(exp = 15.days.from_now)
     JWT.encode({ auth_token: self.auth_token, exp: exp.to_i }, Rails.application.credentials.secret_key_base, "HS256")
   end
