@@ -15,7 +15,7 @@ function App() {
       const token = localStorage.getItem('token')
       if (token) {
         try {
-          const res = await axios.get("http://localhost:3000/api/v1/user/me",
+          const res = await axios.get("http://patchara.local:3000/api/v1/user/me",
             {
               headers: {
                 "auth-token": `Bearer ${token}`,
@@ -46,7 +46,7 @@ function App() {
     const token = localStorage.getItem('token')
     if (token) {
       try {
-        const res = await axios.post("http://localhost:3000/api/v1/user/sign_out",
+        const res = await axios.post("http://patchara.local:3000/api/v1/user/sign_out",
           {},
           {
             headers: {

@@ -20,7 +20,7 @@ const Navbar = ({user}) => {
         const token = localStorage.getItem("token");
         if (!token || consumer) return;
 
-        consumer = createConsumer(`ws://localhost:3000/cable?token=${token}`);
+        consumer = createConsumer(`ws://patchara.local:3000/cable?token=${token}`);
 
         const subscription = consumer.subscriptions.create("NotificationChannel", {
             received(data) {

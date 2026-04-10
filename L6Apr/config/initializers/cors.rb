@@ -7,7 +7,14 @@
 
  Rails.application.config.middleware.insert_before 0, Rack::Cors do
    allow do
-     origins "http://localhost:5173"
+     origins [
+      "http://patchara.local:5173",
+      "http://patchara.local:3000",
+      "localhost:5173",
+      "127.0.0.1:5173",
+      /\Ahttp:\/\/192\.168\.1\.\d+:\d+\z/,
+      /\Ahttp:\/\/.*\.local(:\d+)?\z/
+    ]
 
      resource "*",
        headers: :any,

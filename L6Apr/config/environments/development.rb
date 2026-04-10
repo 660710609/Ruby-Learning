@@ -3,6 +3,15 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   config.active_job.queue_adapter = :async
+
+  config.hosts << "patchara.local"
+  config.hosts << "/192\.168\.1\.\d+/"
+
+  config.action_cable.allowed_request_origins = [
+    "http://patchara.local:5173",     # สำหรับ React (Vite)
+    "http://localhost:5173",          # สำหรับเทสในเครื่อง
+    /http:\/\/192\.168\.1\.\d+:\d+/    # เผื่อใช้ IP วงแลน
+  ]
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -67,7 +76,7 @@ Rails.application.configure do
   config.action_view.annotate_rendered_view_with_filenames = true
 
   # Uncomment if you wish to allow Action Cable access from any origin.
-  # config.action_cable.disable_request_forgery_protection = true
+  config.action_cable.disable_request_forgery_protection = false
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
