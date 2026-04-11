@@ -1,0 +1,67 @@
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subbox select{
+    margin-right: 10px;
+    border-radius: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.subbox button{
+    padding: 5px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.grid-oil{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 20px;
+}
+
+.grid-oil:has(> div:first-child:last-child) {
+  grid-template-columns: 1fr; 
+  max-width: 500px; 
+  margin: 0 auto;             
+}
+
+.sub-grid{
+    border: 3px solid black;
+    border-radius: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.sub-grid h3{
+    margin: 0;
+    padding: 0;
+}
+
+.button-a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(205, 205, 205);
+}

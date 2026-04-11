@@ -1,0 +1,141 @@
+body.loading {
+    background-color: #424040;
+}
+
+.scraping-views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.scraping-button {
+    padding: 10px;
+    border-radius: 16px;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.scraping-pop-up-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    min-width: 300px;
+    text-align: center;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #0ab21b;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+}
+
+.checkmark-circle .background {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #2ecc71;
+    /* สีเขียว */
+    position: absolute;
+}
+
+.checkmark-circle .icon {
+    display: block;
+}
+
+.checkmark-circle .icon:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 40px;
+    border: solid #fff;
+    border-width: 0 5px 5px 0;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    transform: rotate(45deg);
+
+    animation: checkmark-show 0.3s ease-in-out forwards;
+    opacity: 0;
+    transform-origin: center;
+}
+
+@keyframes checkmark-show {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+.in-pop-up p,
+.in-pop-up button {
+    margin: 10px;
+}
+
+.btn-close{
+    padding: 10px;
+    border-radius: 16px;
+}

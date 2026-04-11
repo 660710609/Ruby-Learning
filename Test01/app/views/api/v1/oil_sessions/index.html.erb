@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "listoil" %>
+<div class="box" data-controller="oil-search">
+  <h2 class>ค้นหาราคาน้ำมัน</h2>
+
+  <div class="subbox">
+    <select name="oil_select" id="oil_select">
+        <option value="All">ALL</option>
+        <option value="Hi Premium Diesel S">Premium Diesel</option>
+        <option value="Hi Diesel S">Diesel</option>
+        <option value="hi Premium 97 Gasohol 95">Premium 97 Gasohol 95</option>
+        <option value="Gasohol E85 S EVO">Gasohol E85</option>
+        <option value="Gasohol E20 S EVO">Gasohol E20</option>
+        <option value="Gasohol 91 S EVO">Gasohol 91</option>
+        <option value="Gasohol 95 S EVO">Gasohol 95</option>
+    </select>       
+    <button data-action="click->oil-search#search" 
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      ดูราคาล่าสุด
+    </button>
+    <a class="button-a" href="api/v1/pullviews">Update Data</a>
+  </div>
+
+  <div id="oil-results" 
+       data-oil-search-target="results" 
+       class="grid-oil">
+  </div>
+</div>

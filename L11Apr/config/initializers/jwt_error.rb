@@ -1,0 +1,2 @@
+class JWTError < StandardError
+end
