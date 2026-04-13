@@ -42,7 +42,7 @@ class OilPriceScraper
 
         i += 1
       end
-      current_price = OilPrice.order(created_at: :asc).limit(8)
+      current_price = OilPrice.order(date: :desc, id: :asc).limit(7)
       message = current_price.map do |oil|
         "#{oil.fuel_type} ราคา ณ วันที่ #{oil.date} อยู่ที่ #{oil.price} บาท"
       end.join("\n")
